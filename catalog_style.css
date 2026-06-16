@@ -1,0 +1,64 @@
+#letters {
+	text-align: center;
+}
+#letters a {
+	color: #00662e;
+	font-size: 24pt;
+	font-weight: bold;
+	margin: 0 5px;
+	text-decoration: none;
+
+}
+#letters a:hover {
+	color: greenyellow;
+}
+#ctlg_txt{
+    padding-left: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.letter {
+    background-color:  #efefef;
+    height: 70px;
+    color:#00662e;
+    font-size: 38pt;
+    font-weight: bold;
+    margin: 15px 0;
+    padding: 0 25px;
+    
+}
+.menu_center_catalog {
+    width: 1000px;
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.column_porods_catalog {
+    display: block; 
+	margin: 0px 15px;
+}
+
+.menu_center_catalog a {
+    color: black;
+	text-decoration: none;
+}
+.menu_center_catalog a:hover {
+	color: #00662e;
+	text-decoration: none;
+}
+.text_black_catalog {
+    width: 220px;
+	height: 70px;
+	font-size: 16pt;
+	word-wrap: break-word;
+	margin: 5px 0px;
+	display: flex;
+	justify-content: center;
+    align-items: flex-start;
+}
+.letter a {
+    vertical-align: middle;
+}
