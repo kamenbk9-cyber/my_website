@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title>Собаки от А до Я - Информация о собаке</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/index_style.css')}}" type="text/css"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/info_style.css')}}" type="text/css"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+</head>
+	<body>
+	<div id="container">
+		<header>
+			<div id="mobile_menu"><div></div><div></div><div></div></div>
+			<nav class="navig" id="navig">
+				<a href="{{url_for('index')}}">ГЛАВНАЯ</a>
+				<a href="{{url_for('catalog')}}">КАТАЛОГ</a>
+				<a href="{{url_for('category_pastushi')}}">КАТЕГОРИИ</a>
+				<a href="{{url_for('contacts')}}">КОНТАКТЫ</a>
+			</nav>
+		</header>
+		<main>
+            <div class="center" id="first"><h2>{{dog["name"]}}</h2></div>
+			<img id="dog_big" src="{{url_for('dog_image', id=dog['index'])}}" alt="dog"/>
+			<div class="info"><p>Стоимость</p>{{dog["price"]}}</div>
+			<div class="info"><p>Срок жизни</p>{{dog["life"]}}</div>
+			<div class="info"><p>Назначение</p>{{dog["task"]}}</div>
+			<div class="info_left"><p>Шерсть</p>{{dog["wool"]}}</div>
+			<div class="info"><p>Содержание</p>{{dog["home"]}}</div>
+			<div class="clear"></div>
+
+			<h3 class="tema">Описание</h3>
+			 <p class="text_black_main">{{dog["descr"]}}</p>
+
+			<h3 class="tema">Особенности</h3>
+			<p class="text_black_main">{{dog["ocoben"]}}</p>
+
+			<h3 class="tema">Еда</h3>
+			<p class="text_black_main">{{dog["food"]}}</p>
+
+			<h3 class="tema">Заключение</h3>
+			<p class="text_black_main">{{dog["end"]}}</p>
+			<br/><br/>
+        </main>
+
+		<footer>
+			<a class="back" href="javascript:history.back()">Назад</a>
+			<a class="home" href="{{url_for('index')}}">Главная</a>
+			<div class="clear"></div>
+			<div id="footer">
+				<p>shabaki.ru</p>
+				<img src="{{url_for('static', filename='images/logotip.svg')}}" alt="logo"/>
+			</div>
+		</footer>
+	</div>
+	<script src="{{url_for('static', filename='js/mobile_menu.js')}}"></script>
+	</body>
+</html>

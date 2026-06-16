@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title>Собаки от А до Я - Каталог пород</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/index_style.css')}}" type="text/css"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/catalog_style.css')}}" type="text/css"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+	<div id="container">
+		<header>
+			<div id="mobile_menu"><div></div><div></div><div></div></div>
+			<nav class="navig" id="navig">
+				<a href="{{url_for('index')}}">ГЛАВНАЯ</a>
+				<a href="{{url_for('catalog')}}">КАТАЛОГ</a>
+				<a href="{{url_for('category_pastushi')}}">КАТЕГОРИИ</a>
+				<a href="{{url_for('contacts')}}">КОНТАКТЫ</a>
+			</nav>
+		</header>
+		<main>
+            <div class="center" id="first"><h2>Каталог всех пород собак</h2></div>
+			<div id="ctlg_txt"><p>Каталог по буквам</p></div>
+			<nav>
+			<div id="letters">
+				<a href="{{ url_for('catalog') }}#А">A</a>
+				<a href="{{ url_for('catalog') }}#Б">Б</a>
+				<a href="{{ url_for('catalog') }}#В">В</a>
+				<a href="{{ url_for('catalog') }}#Ш">Г</a>
+				<a href="{{ url_for('catalog') }}#Д">Д</a>
+				<a href="{{ url_for('catalog') }}#Е">Е</a>
+				<a href="{{ url_for('catalog') }}#Ж">Ж</a>
+				<a href="{{ url_for('catalog') }}#З">З</a>
+				<a href="{{ url_for('catalog') }}#И">И</a>
+				<a href="{{ url_for('catalog') }}#Й">Й</a>
+				<a href="{{ url_for('catalog') }}#К">К</a>
+				<a href="{{ url_for('catalog') }}#Л">Л</a>
+				<a href="{{ url_for('catalog') }}#М">М</a>
+				<a href="{{ url_for('catalog') }}#О">О</a>
+				<a href="{{ url_for('catalog') }}#П">П</a>
+				<a href="{{ url_for('catalog') }}#Р">Р</a>
+				<a href="{{ url_for('catalog') }}#С">С</a>
+				<a href="{{ url_for('catalog') }}#Т">Т</a>
+				<a href="{{ url_for('catalog') }}#У">У</a>
+				<a href="{{ url_for('catalog') }}#Ф">Ф</a>
+				<a href="{{ url_for('catalog') }}#Х">Х</a>
+				<a href="{{ url_for('catalog') }}#Ч">Ч</a>
+				<a href="{{ url_for('catalog') }}#Ш">Ш</a>
+				<a href="{{ url_for('catalog') }}#Э">Э</a>
+				<a href="{{ url_for('catalog') }}#Ю">Ю</a>
+				<a href="{{ url_for('catalog') }}#Я">Я</a>
+			</div>
+		</nav>
+		{% for letter, dogs in dogs_letter.items()%}
+		<div class="letter"><a name="{{letter}}">{{letter}}</a></div>
+		<div class="menu_center_catalog">
+		{%for dogs_column in dogs%}
+			<div class="column_porods_catalog">
+			{% for dog in dogs_column%}
+					<a href="{{url_for('info', id=dog['index'])}}"><p class="text_black_catalog">{{dog["name"]}}</p></a><br>
+			{%endfor%}
+			</div>
+		{%endfor%}
+		</div>
+		{%endfor%}
+
+        </main>
+
+        <footer>
+			<a class="back" href="javascript:history.back()">Назад</a>
+			<a class="home" href="{{url_for('index')}}">Главная</a>
+			<div class="clear"></div>
+			<div id="footer">
+				<p>shabaki.ru</p>
+				<img src="{{url_for('static', filename='images/logotip.svg')}}" alt="logo"/>
+			</div>
+		</footer>
+	</div>
+	<script src="{{url_for('static', filename='js/mobile_menu.js')}}"></script>
+	</body>
+</html>

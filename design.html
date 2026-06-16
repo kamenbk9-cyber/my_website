@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title>Собаки от А до Я - Главная</title>
+	<link rel="stylesheet" href="css/index_style.css" type="text/css"/>
+	</head>
+	<body>
+	<div id="container">
+		<header>
+			<nav class="navig">
+				<a href="{{url_for('index')}}">ГЛАВНАЯ</a>
+				<a href="{{url_for('catalog')}}">КАТАЛОГ</a>
+				<a href="{{url_for('category_pastushi')}}">КАТЕГОРИИ</a>
+				<a href="{{url_for('contacts')}}">КОНТАКТЫ</a>
+			</nav>
+		</header>
+		<main>
+            <div class="center"><h2></h2></div>
+        </main>
+
+		<footer>
+			<div id="footer">
+				<p>shabaki.ru</p>
+				<img src="images/logotip.svg" alt="logo"/>
+			</div>
+		</footer>
+	</div>
+	</body>
+</html>

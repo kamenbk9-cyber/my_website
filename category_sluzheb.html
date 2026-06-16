@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title>Собаки от А до Я - Служебные</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/index_style.css')}}" type="text/css"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/category.css')}}" type="text/css"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+	<div id="container">
+		<header>
+			<div id="mobile_menu"><div></div><div></div><div></div></div>
+			<nav class="navig" id="navig">
+				<a href="{{url_for('index')}}">ГЛАВНАЯ</a>
+				<a href="{{url_for('catalog')}}">КАТАЛОГ</a>
+				<a href="{{url_for('category_pastushi')}}">КАТЕГОРИИ</a>
+				<a href="{{url_for('contacts')}}">КОНТАКТЫ</a>
+			</nav>
+		</header>
+		<main>
+			<div class="center" id="first"><h2>Категории собак по назначению</h2></div>
+
+		<nav>
+		<div class="menu_center">
+		<a href="{{url_for('category_pastushi')}}"><div class="categoria"><p class="categoria_name">Пастушьи</p></div></a>
+		<a href="{{url_for('category_company')}}"><div class="categoria"><p class="categoria_name">Компаньоны</p></div></a>
+		<a href="{{url_for('category_sluzheb')}}"><div id="category_active"><p class="categoria_name">Служебные</p></div></a>
+		<a href="{{url_for('category_decorate')}}"><div class="categoria"><p class="categoria_name">Декоративные</p></div></a>
+		<a href="{{url_for('category_ohota')}}"><div class="categoria"><p class="categoria_name">Охотничьи</p></div></a>
+		<a href="{{url_for('category_boyz')}}"><div class="categoria"><p class="categoria_name">Бойцовские</p></div></a>
+		</div>
+		</nav>
+		<div id="category_title"><p>Служебные</p></div>
+
+		<div class="menu_center">
+			{% for dog in dogs%}
+		<a href="{{url_for('info', id=dog['index'])}}"><img class="dog_small" src="{{url_for('dog_image', id=dog['index'])}}"/><p class="text_green">{{dog["name"]}}</p></a>
+			{% endfor %}
+		</div>
+		<div class="clear"></div>
+        </main>
+
+		<footer>
+			<a class="back" href="javascript:history.back()">Назад</a>
+			<a class="home" href="{{url_for('index')}}">Главная</a>
+			<div class="clear"></div>
+			<div id="footer">
+				<p>shabaki.ru</p>
+				<img src="{{url_for('static', filename='images/logotip.svg')}}" alt="logo"/>
+			</div>
+		</footer>
+	</div>
+	<script src="{{url_for('static', filename='js/mobile_menu.js')}}"></script>
+	</body>
+</html>
